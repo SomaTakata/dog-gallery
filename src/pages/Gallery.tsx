@@ -4,7 +4,6 @@ import {
   IonContent,
   IonHeader,
   IonImg,
-  IonItem,
   IonPage,
   IonRefresher,
   IonRefresherContent,
@@ -64,11 +63,13 @@ const Gallery: React.FC = () => {
         </IonRefresher>
         {data.map((url: any) => {
           return (
-            <div className="display">
-              <IonCard key={url}>
-                <IonImg src={url}></IonImg>
-              </IonCard>
-            </div>
+            <IonRow key={url}>
+              <IonCol>
+                <IonCard>
+                  <IonImg src={url}></IonImg>
+                </IonCard>
+              </IonCol>
+            </IonRow>
           );
         })}
       </IonContent>
